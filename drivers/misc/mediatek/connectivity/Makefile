@@ -50,17 +50,17 @@ endif
 
         ifneq (,$(filter $(CONFIG_MTK_COMBO_CHIP), "CONSYS_6885" "CONSYS_6893"))
             export MTK_COMBO_CHIP=CONNAC2X2_SOC3_0
-            PATH_TO_WMT_DRV      = vendor/mediatek/kernel_modules/connectivity/conninfra
+            PATH_TO_WMT_DRV      = drivers/misc/mediatek/connectivity/conninfra
         else ifneq (,$(filter $(CONFIG_MTK_COMBO_CHIP), "CONSYS_6779" "CONSYS_6873" "CONSYS_6853"))
             export MTK_COMBO_CHIP=CONNAC2X2
-            PATH_TO_WMT_DRV      = vendor/mediatek/kernel_modules/connectivity/common
+            PATH_TO_WMT_DRV      = drivers/misc/mediatek/connectivity/common
         else
             export MTK_COMBO_CHIP=CONNAC
-            PATH_TO_WMT_DRV      = vendor/mediatek/kernel_modules/connectivity/common
+            PATH_TO_WMT_DRV      = drivers/misc/mediatek/connectivity/common
         endif
 
-        PATH_TO_WLAN_CHR_DRV = vendor/mediatek/kernel_modules/connectivity/wlan/adaptor
-        PATH_TO_WLAN_DRV     = vendor/mediatek/kernel_modules/connectivity/wlan/core/gen4m
+        PATH_TO_WLAN_CHR_DRV = drivers/misc/mediatek/connectivity/wlan/adaptor
+        PATH_TO_WLAN_DRV     = drivers/misc/mediatek/connectivity/wlan/core/gen4m
 
         ABS_PATH_TO_WMT_DRV      = $(srctree)/../$(PATH_TO_WMT_DRV)
         ABS_PATH_TO_WLAN_CHR_DRV = $(srctree)/../$(PATH_TO_WLAN_CHR_DRV)
