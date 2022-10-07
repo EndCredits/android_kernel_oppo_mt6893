@@ -178,7 +178,7 @@ typedef struct {
     unsigned char       Sensor[256];
 } sensor_config_info_t;
 
-__attribute__((weak)) unsigned int get_project() {
+__attribute__((weak)) unsigned int get_project(void) {
     return -1;
 }
 
