@@ -95,7 +95,7 @@ save_defconfig(){
     echo " Saving kernel config ........";
     echo "------------------------------";
 
-    make CC=$CC ARCH=$ARCH CROSS_COMPILE=$CROSS_COMPILE CROSS_COMPILE_COMPAT=$CROSS_COMPILE_COMPAT CLANG_TRIPLE=$CLANG_TRIPLE $CC_ADDITION_FLAGS O=$OUT -j$THREAD savedefconfig;
+    make CC=$CC ARCH=$ARCH CROSS_COMPILE=$CROSS_COMPILE CROSS_COMPILE_ARM32=$CROSS_COMPILE_COMPAT CLANG_TRIPLE=$CLANG_TRIPLE $CC_ADDITION_FLAGS O=$OUT -j$THREAD savedefconfig;
     END_SEC=$(date +%s);
     COST_SEC=$[ $END_SEC-$START_SEC ];
     echo "Finished. Kernel config saved to $OUT/defconfig"
