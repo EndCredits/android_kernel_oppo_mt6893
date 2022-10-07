@@ -125,6 +125,7 @@ main(){
         echo "    flashable       Only generate the flashable zip file. Don't use it before you have built once."
         echo "    savedefconfig   Save the defconfig file to source tree."
         echo "    defconfig       Only build kernel defconfig"
+        echo "    kernelonly      Only build kernel defconfig and Image"
         echo "    help ( -h )     Print help information."
         echo "    version         Display the version number."
         echo
