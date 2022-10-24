@@ -146,8 +146,8 @@ static uint8_t *soc3_0_apucCr4FwName[] = {
 ********************************************************************************
 */
 #if CFG_MTK_ANDROID_EMI
-	phys_addr_t gConEmiPhyBase;
-	unsigned long long gConEmiSize;
+	extern phys_addr_t gConEmiPhyBase;
+	extern unsigned long long gConEmiSize;
 
 #if (CFG_SUPPORT_PRE_ON_PHY_ACTION == 1)
 u_int8_t *gEmiCalResult;

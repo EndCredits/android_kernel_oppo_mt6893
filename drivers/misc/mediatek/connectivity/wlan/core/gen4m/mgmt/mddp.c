@@ -120,7 +120,7 @@ enum BOOTMODE {
 	UNKNOWN_BOOT
 };
 
-enum BOOTMODE g_boot_mode = NORMAL_BOOT;
+enum BOOTMODE _g_boot_mode = NORMAL_BOOT;
 u_int8_t g_fgMddpEnabled = TRUE;
 
 struct mddpw_net_stat_ext_t stats;
@@ -139,7 +139,7 @@ static int32_t mddpRegisterCb(void)
 {
 	int32_t ret = 0;
 
-	switch (g_boot_mode) {
+	switch (_g_boot_mode) {
 	case RECOVERY_BOOT:
 		g_fgMddpEnabled = FALSE;
 		break;
@@ -627,7 +627,6 @@ int32_t mddpMdNotifyInfo(struct mddpw_md_notify_info_t *prMdInfo)
 			prClientList = &prP2pBssInfo->rStaRecOfClientList;
 			LINK_FOR_EACH_ENTRY(prCurrStaRec, prClientList,
 					rLinkEntry, struct STA_RECORD) {
-
 				if (!prCurrStaRec)
 					break;
 				mddpNotifyDrvTxd(prAdapter,
@@ -795,7 +794,7 @@ void mddpInit(void)
 		return;
 
 	DBGLOG(INIT, INFO, "bootmode: 0x%x\n", tag->bootmode);
-	g_boot_mode = tag->bootmode;
+	_g_boot_mode = tag->bootmode;
 }
 
 static void save_mddp_stats(void)
