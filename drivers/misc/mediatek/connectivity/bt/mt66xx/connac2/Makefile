@@ -6,7 +6,7 @@ MTK_PLATFORM := $(subst ",,$(CONFIG_MTK_PLATFORM))
 # Necessary Check
 
 ifeq ($(AUTOCONF_H),)
-    $(error AUTOCONF_H is not defined)
+    export AUTOCONF_H=$(KERNEL_OUT)include/generated/autoconf.h
 endif
 
 $(warning connac20 bt driver: _MTK_BT_CHIP = $(_MTK_BT_CHIP))
@@ -59,8 +59,8 @@ endif
 # ---------------------------------------------------
 # Include Path
 # ---------------------------------------------------
-CONN_INFRA_SRC := $(TOP)/vendor/mediatek/kernel_modules/connectivity/conninfra
-WMT_SRC := $(TOP)/vendor/mediatek/kernel_modules/connectivity/common
+CONN_INFRA_SRC := $(srctree)/drivers/misc/mediatek/connectivity/conninfra
+WMT_SRC := $(srctree)/drivers/misc/mediatek/connectivity/common
 BTIF_SRC := $(srctree)/drivers/misc/mediatek/btif
 ccflags-y += -I$(srctree)/drivers/misc/mediatek/connectivity/common
 ccflags-y += -I$(CONN_INFRA_SRC)/include

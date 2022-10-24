@@ -16,7 +16,7 @@ MTK_PLATFORM := $(subst ",,$(CONFIG_MTK_PLATFORM))
 ifeq ($(CONFIG_MTK_GPS_SUPPORT), y)
 
 ifeq ($(AUTOCONF_H),)
-    $(error AUTOCONF_H is not defined)
+    export AUTOCONF_H=$(KERNEL_OUT)include/generated/autoconf.h
 endif
 
 ccflags-y += -imacros $(AUTOCONF_H)
