@@ -2662,7 +2662,7 @@ void wlanCoAntVFE28Dis(void)
 
 void wlanCoAntWiFi(void)
 {
-	u_int32 u4GPIO10 = 0x0;
+	u_int32_t u4GPIO10 = 0x0;
 
 	wf_ioremap_read(0x100053a0, &u4GPIO10);
 	u4GPIO10 |= 0x20000;
@@ -2672,7 +2672,7 @@ void wlanCoAntWiFi(void)
 
 void wlanCoAntMD(void)
 {
-	u_int32 u4GPIO10 = 0x0;
+	u_int32_t u4GPIO10 = 0x0;
 
 	wf_ioremap_read(0x100053a0, &u4GPIO10);
 	u4GPIO10 |= 0x10000;
