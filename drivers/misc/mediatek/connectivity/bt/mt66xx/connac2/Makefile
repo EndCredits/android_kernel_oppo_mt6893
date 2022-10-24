@@ -64,6 +64,8 @@ WMT_SRC := $(srctree)/drivers/misc/mediatek/connectivity/common
 BTIF_SRC := $(srctree)/drivers/misc/mediatek/btif
 ccflags-y += -I$(srctree)/drivers/misc/mediatek/connectivity/common
 ccflags-y += -I$(CONN_INFRA_SRC)/include
+ccflags-y += -I$(CONN_INFRA_SRC)/base/include
+ccflags-y += -I$(CONN_INFRA_SRC)/conf/include
 ccflags-y += -I$(CONN_INFRA_SRC)/debug_utility/include
 ccflags-y += -I$(CONN_INFRA_SRC)/debug_utility/
 ifneq ($(CONFIG_MTK_CONNSYS_DEDICATED_LOG_PATH),)
@@ -84,7 +86,7 @@ endif
 # Objects List
 # ---------------------------------------------------
 MODULE_NAME := bt_drv
-obj-m += $(MODULE_NAME).o
+obj-y += $(MODULE_NAME).o
 
 #PLAT_DIR  := plat/$(MTK_PLATFORM)
 
